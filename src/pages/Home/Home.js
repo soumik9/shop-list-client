@@ -1,10 +1,11 @@
 import React from 'react';
+import Shops from './Shops/Shops';
 
 const Home = () => {
     return (
-        <div>
-            
-        </div>
+       <div>
+           <Shops />
+       </div>
     );
 };
 
