@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Tamim Enterprise",
+        "area": "Mumbai Suburban",
+        "category": "Grocery",
+        "openingDate": "27 May 2022",
+        "ClosingDate": "10 June 2022",
+        "status": true
+    },
+    {
+        "name": "Style World",
+        "area": "Nagpur",
+        "category": "Chemist",
+        "openingDate": "20 May 2022",
+        "ClosingDate": "15 June 2022",
+        "status": true
+    }
+    },
+    {
+        "name": "Mollika Inn",
+        "area": "Nagpur",
+        "category": "Baker",
+        "openingDate": "20 May 2022",
+        "ClosingDate": "16 May 2022",
+        "status": true
+    }
+]
