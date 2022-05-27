@@ -54,7 +54,7 @@ const AddShop = () => {
                             <div className="task__header px-3">
                                 <Row className='justify-content-between align-items-center'>
                                     <Col md={2}>
-                                        <h2 className='title'>Add Task</h2>
+                                        <h2 className='title'>Add Shop</h2>
                                     </Col>
                                     <Col md={2}>
                                         <div className="text-end">
