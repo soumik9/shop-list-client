@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Container, Row } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { getShops } from '../../../actions/shops';
 import ShopCard from './ShopCard';
 
 const Shops = () => {
+
+    const dispatch = useDispatch();
+
+    // all shops
+    useEffect( () => {
+        dispatch(getShops());
+    }, [dispatch])
+  
 
     const shops = useSelector((state) => state.shops);
 
