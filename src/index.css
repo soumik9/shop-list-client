@@ -5,3 +5,17 @@
 .my-100{
   margin: 100px 0;
 }
+
+.title{
+  color: #40739e;
+}
+
+.btn-shop{
+  background-color: #40739e !important;
+  color: white !important;
+}
+
+.icon-p{
+  position: relative;
+  top: -2px;
+}

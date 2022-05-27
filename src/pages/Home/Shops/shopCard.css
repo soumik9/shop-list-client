@@ -1,0 +1,15 @@
+.shop__items{
+    position: relative;
+}
+
+.status{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-bottom-left-radius: 25px;
+}
+
+.status p {
+    font-weight: 500;
+    margin: 0;
+}

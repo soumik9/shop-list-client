@@ -21,10 +21,13 @@ const Shops = () => {
         <Container>
             <Row className='gy-5'>
                 {
-                    shops.map(shop => <ShopCard
-                        key={shop._id}    
-                        shop={shop}    
-                    />)
+                    shops.length ? (
+                        shops.map(shop => <ShopCard
+                            key={shop._id}    
+                            shop={shop}    
+                        />)
+                    ) : <p>No shop data! Please reload</p>
+                    
                 }
             </Row>
         </Container>
