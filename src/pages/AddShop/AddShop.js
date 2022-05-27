@@ -11,6 +11,7 @@ const AddShop = () => {
 
     // all categories
     const dispatch = useDispatch();
+    const [error, setError] = useState('')
 
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
@@ -27,20 +28,36 @@ const AddShop = () => {
         const monthClosingDate = splitClosingDate[1];
         const dayClosingDate = splitClosingDate[2];
         let setClosingDate = (yearClosingDate + "-" + monthClosingDate + "-" + dayClosingDate);
+
+        const splitOpeningDate = openingDate.split('-');
+        const yearOpeningDate = splitOpeningDate[0];
+        const monthOpeningDate = splitOpeningDate[1];
+        const dayOpeningDate = splitOpeningDate[2];
+        let setOpeningDate = (yearOpeningDate + "-" + monthOpeningDate + "-" + dayOpeningDate);
+
+        
         
 
         const closeDate = new Date(setClosingDate);
+        const openDate = new Date(setOpeningDate);
         closeDate > today ? status = true : status = false;
 
-        const shopData = { 
-            name: name, area: area, category: category, openingDate: openingDate, ClosingDate: ClosingDate, status: status 
+        if(openDate > closeDate){
+            setError('Closing date should be after dates of opening date')
+        }else{
+            setError('');
+            const shopData = { 
+                name: name, area: area, category: category, openingDate: openingDate, ClosingDate: ClosingDate, status: status 
+            }
+    
+            dispatch(createShop(shopData));
+            toast.success(`Shop added`, { duration: 2000, position: 'top-right', });
+            reset();
         }
+             
 
-
-        dispatch(createShop(shopData));
-        toast.success(`Shop added`, { duration: 2000, position: 'top-right', });
-        reset();
-
+       
+        
     }
 
     return (
@@ -122,7 +139,8 @@ const AddShop = () => {
                                     <div className='mt-4'>
                                         <Form.Label htmlFor="ClosingDate" className='ps-1'>Closing Date</Form.Label>
                                         <Form.Control type="date" id='ClosingDate' {...register('ClosingDate', { required: true })} />
-                                        {errors.ClosingDate && <p className='p-0 text-danger text-center'>Closing Date is required.</p>}
+                                        {errors.ClosingDate && <p className='m-0 text-danger text-center'>Closing Date is required.</p>}
+                                        {error && <p className='m-0 text-danger text-center'>{error}</p>}
                                     </div>
 
                                     <button className='btn btn-shop py-2 w-100 mt-5' type="submit">
