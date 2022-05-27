@@ -53,11 +53,7 @@ const AddShop = () => {
             dispatch(createShop(shopData));
             toast.success(`Shop added`, { duration: 2000, position: 'top-right', });
             reset();
-        }
-             
-
-       
-        
+        }  
     }
 
     return (

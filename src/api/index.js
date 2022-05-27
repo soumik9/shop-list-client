@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = `http://localhost:5000/services`;
+const url = `https://shop-list-9.herokuapp.com/services`;
 
 export const fetchShops = (category, area, status) => axios.get(`${url}?category=${category}&area=${area}&status=${status}`);
 export const fetchSingleShops = ( shopId ) => axios.get(`${url}/${shopId}`);

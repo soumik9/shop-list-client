@@ -13,7 +13,7 @@ const EditShop = () => {
     const { shopId } = useParams();
     const dispatch = useDispatch();
     const [error, setError] = useState('')
-    const { register, handleSubmit, formState: { errors }, reset } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
 
     // all shops
