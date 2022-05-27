@@ -19,7 +19,7 @@ const Shops = () => {
     return (
         <section className='shops my-100'>
         <Container>
-            <Row>
+            <Row className='gy-5'>
                 {
                     shops.map(shop => <ShopCard
                         key={shop._id}    

@@ -8,3 +8,12 @@ export const getShops = () => async (dispatch) => {
         console.log(error.message);
     }
 }
+
+export const createShop = (shopData) => async (dispatch) => {
+    try {
+        const { data } = await api.createShop(shopData);
+        dispatch({type: 'CREATE', payload: data});
+    } catch (error) {
+        console.log(error.message);
+    }
+}

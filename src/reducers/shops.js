@@ -5,7 +5,7 @@ export default (shops = [], action) => {
         case 'FETCH_ALL':
             return action.payload;
         case 'CREATE':
-            return shops;
+            return [...shops, action.payload];
         default:
             return shops;
     }

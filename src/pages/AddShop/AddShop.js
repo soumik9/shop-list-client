@@ -1,22 +1,15 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { RiLoginCircleLine } from 'react-icons/ri';
 import { useForm } from 'react-hook-form';
 import { Card, Col, Container, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { getCategories } from '../../actions/categories';
+import { useDispatch } from 'react-redux';
+import { createShop } from '../../actions/shops';
 
 const AddShop = () => {
 
     // all categories
     const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(getCategories());
-    }, [dispatch])
-
-    const categories = useSelector((state) => state.categories);
-
 
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
@@ -49,8 +42,10 @@ const AddShop = () => {
             name: name, area: area, category: category, openingDate: openingDate, ClosingDate: ClosingDate, status: status 
         }
 
+        dispatch(createShop(shopData));
+        alert('Shop added');
+        // reset();
 
-        console.log('status', shopData);
     }
 
     return (
